@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SerieIII"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/TextoRuta"
+        android:text="Escriba la ruta donde desea guardar su archivo"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="5dp"
+        android:layout_height="5dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/Texto_Ruta"
+        android:hint="Documents,Android,Pictures,Download"
+        android:textSize="12dp"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:inputType="text"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="5dp"
+        android:layout_height="5dp" />
+
+    <Button
+        android:id="@+id/Boton_Comprimir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Comprimir Archivo txt" />
+
+    <Button
+        android:id="@+id/Boton_Descomprimir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Descomprimir archivo lzw" />
+
+    <TextView
+        android:layout_width="5dp"
+        android:layout_height="5dp" />
+
+    <TextView
+        android:id="@+id/MostrarArchivoCompreso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Boton_OpenFile"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_red_light"
+        android:padding="10dp"
+        android:textColor="@android:color/background_dark" />
+    <TextView
+        android:layout_width="5dp"
+        android:layout_height="5dp" />
+    <TextView
+        android:id="@+id/MostrarTablaCompleta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Boton_OpenFile"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_green_light"
+        android:padding="10dp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:layout_width="5dp"
+        android:layout_height="5dp" />
+    <TextView
+        android:id="@+id/MostrarRutaArchivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Boton_OpenFile"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_blue_light"
+        android:padding="10dp"
+        android:textColor="@android:color/background_dark" />
+</LinearLayout>
