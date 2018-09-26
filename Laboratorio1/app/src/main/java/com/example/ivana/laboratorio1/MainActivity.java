@@ -49,6 +49,18 @@ public class MainActivity extends AppCompatActivity
             crearDirectorioPublico(nombreDirectorioPublico);
         }
 
+        if (isExternalStorageWritable()) {
+            String nombreDirectorioPublico = "TablasCompresionesLZW";
+            crearDirectorioPublico2(nombreDirectorioPublico);
+        }
+        if (isExternalStorageWritable()) {
+            String nombreDirectorioPublico = "ContadoresLaboratorio1";
+            crearDirectorioPublico2(nombreDirectorioPublico);
+        }
+
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -128,9 +140,21 @@ public class MainActivity extends AppCompatActivity
         String state = Environment.getExternalStorageState();
         return Environment.MEDIA_MOUNTED.equals(state);
     }
-    public File crearDirectorioPublico(String nombreDirectorio) {
+    public File crearDirectorioPublico(String nombreDirectorio)
+    {
         //Crear directorio público en la carpeta Pictures.
         File directorio = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), nombreDirectorio);
+        rut = directorio.toString();
+        //Muestro un mensaje en el logcat si no se creo la carpeta por algun motivo
+        if (!directorio.mkdirs())
+            Log.e(TAG, "Error: No se creo el directorio público");
+
+        return directorio;
+    }
+    public File crearDirectorioPublico2(String nombreDirectorio)
+    {
+        //Crear directorio público en la carpeta Pictures.
+        File directorio = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), nombreDirectorio);
         rut = directorio.toString();
         //Muestro un mensaje en el logcat si no se creo la carpeta por algun motivo
         if (!directorio.mkdirs())

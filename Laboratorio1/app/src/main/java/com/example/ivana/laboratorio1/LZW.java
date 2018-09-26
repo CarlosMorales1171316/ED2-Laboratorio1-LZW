@@ -47,10 +47,9 @@ public class LZW {
 
     static ArrayList<Integer> codigos= new ArrayList<Integer>();
     static ArrayList<String> cadenaDescomp= new ArrayList<String>();
-    public static String rutaComprimir="C:/LZW/Compreso/";
-    public static String rutaArchivo ="C:/LZW/";
-    public static String rutaArchivoDescompreso="C:/LZW/Descompreso/";
-
+    public static String rutaTablas = "/storage/emulated/0/Documents/TablasCompresionesLZW/";
+    public static String rutaArchivoDescompreso= "/storage/emulated/0/Download/MisDescompresionesLZW/";
+    public static String rutaComprimir="/storage/emulated/0/Download/MisCompresiones/";
 
     //Constructor
     public LZW() {
@@ -77,9 +76,10 @@ public class LZW {
         salidaCodificada = new int[100];
     }
 
-    public void Compresion(String n) throws IOException{
+    public String Compresion(String n) throws IOException{
+
         try {
-            String ruta2 = rutaComprimir+"ArchivoCompreso("+n+").lzw";
+            String ruta2 = rutaComprimir+"ArchivoCompresoLZW("+n+").LZW";
             File archivoTexto = new File(ruta2);
             if(!archivoTexto.exists()) {
                 archivoTexto.createNewFile();
@@ -122,11 +122,12 @@ public class LZW {
         }catch(IOException e) {
             e.printStackTrace();
         }
+        return rutaComprimir+"ArchivoCompresoLZW("+n+").LZW";
     }
 
     public void ObtenerList(String n)throws IOException {
 
-        String ruta2 = rutaComprimir + "TablaCompleta("+n+").txt";
+        String ruta2 = rutaTablas + "TablaCompleta("+n+").txt";
         File archivoTablaFinal = new File(ruta2);
         if(!archivoTablaFinal.exists()) {
             archivoTablaFinal.createNewFile();
@@ -139,8 +140,8 @@ public class LZW {
         bw1.close();
     }
 
-    public void ObtenerList2(String n)throws IOException {
-        String ruta2 =rutaComprimir+"TablaCaracteresUnitarios("+n +").txt";
+    public void ObtenerList2(String nombre)throws IOException {
+        String ruta2 =rutaTablas+"TablaCaracteresUnitarios("+nombre +").txt";
         File archivoTabla = new File(ruta2);
         if(!archivoTabla.exists()) {
             archivoTabla.createNewFile();
@@ -219,10 +220,10 @@ public class LZW {
     }
 
 
-    public void EscribirArchivo(String ruta,String n)
-    {
+    public String EscribirArchivo(String n)
+    {           String ruta2 = rutaTablas+"ArchivoCompreso("+n+").lzw";
         if(CodigosDeSalida.size()>0){
-            try {   String ruta2 =ruta+"CompresionAscii("+n+").txt";
+            try {
                 OutputStream salidaStream  = new FileOutputStream(ruta2);
                 Writer salidaStreamWriter = new OutputStreamWriter(salidaStream);
                 for(int i=0;i<CodigosDeSalida.size();i++){
@@ -237,6 +238,7 @@ public class LZW {
         else {
             System.out.println("Archivo vacio");
         }
+        return ruta2;
     }
 
     public static void LeerArchivoSalida(String ruta)
@@ -325,7 +327,6 @@ public class LZW {
         }
         return textoArchivo;
     }
-
 
     public void Validararchivo(String path)
     {

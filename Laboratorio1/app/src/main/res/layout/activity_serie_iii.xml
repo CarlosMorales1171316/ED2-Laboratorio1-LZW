@@ -19,14 +19,10 @@
     <TextView
         android:layout_width="5dp"
         android:layout_height="5dp" />
-    <EditText
+    <Button
         android:layout_width="match_parent"
-        android:id="@+id/Texto_Ruta"
-        android:hint="Documents,Android,Pictures,Download"
-        android:textSize="12dp"
-        android:gravity="center"
-        android:textStyle="italic"
-        android:inputType="text"
+        android:id="@+id/Boton_Ruta"
+        android:text="Escoja ruta de archivo"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -56,35 +52,40 @@
     <TextView
         android:id="@+id/MostrarArchivoCompreso"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_below="@+id/Boton_OpenFile"
         android:layout_centerHorizontal="true"
         android:background="@android:color/holo_red_light"
         android:padding="10dp"
+        android:textSize="10dp"
         android:textColor="@android:color/background_dark" />
     <TextView
         android:layout_width="5dp"
         android:layout_height="5dp" />
+
     <TextView
         android:id="@+id/MostrarTablaCompleta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="148dp"
         android:layout_below="@+id/Boton_OpenFile"
         android:layout_centerHorizontal="true"
         android:background="@android:color/holo_green_light"
         android:padding="10dp"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:textSize="10dp" />
 
     <TextView
         android:layout_width="5dp"
         android:layout_height="5dp" />
+
     <TextView
         android:id="@+id/MostrarRutaArchivo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="74dp"
         android:layout_below="@+id/Boton_OpenFile"
         android:layout_centerHorizontal="true"
         android:background="@android:color/holo_blue_light"
         android:padding="10dp"
+        android:textSize="15dp"
         android:textColor="@android:color/background_dark" />
 </LinearLayout>

@@ -11,6 +11,7 @@ public class Diccionario {
 
     //Variables
     private Tabla diccionario[] = new Tabla[265];
+    public static List<String> listaDescompresa = new ArrayList<String>();
     public int size = 0 ;
 
     //Constructor

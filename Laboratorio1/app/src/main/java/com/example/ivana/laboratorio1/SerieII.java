@@ -25,13 +25,14 @@ public class SerieII extends AppCompatActivity {
         List<MostrarCompresiones> ListaCompresiones = new ArrayList<MostrarCompresiones>();
 
 
-        final File carpeta = new File( "/storage/emulated/0/Download/MisArchivos");
+        //region Mostrar compresiones huffman
+        final File carpeta = new File("/storage/emulated/0/Download/MisArchivos");
         List<String> listaDirectorios = new ArrayList<String>();
         listaDirectorios = listadoDirectoriosCarpeta2(carpeta);
         Collections.sort(listaDirectorios);
         Collections.reverse(listaDirectorios);
 
-        final File carpeta2 = new File(  "/storage/emulated/0/Download/MisCompresiones");
+        final File carpeta2 = new File("/storage/emulated/0/Download/MisCompresiones");
         List<String> listaDirectorios2 = new ArrayList<String>();
         listaDirectorios2 = listadoDirectoriosCarpeta2(carpeta2);
         Collections.sort(listaDirectorios2);
@@ -52,22 +53,31 @@ public class SerieII extends AppCompatActivity {
         List<String> FactorDeCompresion = new ArrayList<String>();
         List<String> PorcentajeDeReduccion = new ArrayList<String>();
 
-        for(int i=0;i<listaDirectorios.size();i++)
-        {
-            RazonDeCompresion.add(RazonDeCompresion(listaDirectorios3.get(i),listaDirectorios4.get(i)) +"");
+if(listaDirectorios.size()>0)
+{
+        for (int i = 0; i < listaDirectorios.size(); i++) {
+            RazonDeCompresion.add(RazonDeCompresion(listaDirectorios3.get(i), listaDirectorios4.get(i)) + "");
         }
-        for(int i=0;i<listaDirectorios.size();i++)
-        {
-            PorcentajeDeReduccion.add(PorcentajeDeReduccion(listaDirectorios3.get(i),listaDirectorios4.get(i))+"");
+        for (int i = 0; i < listaDirectorios.size(); i++) {
+            PorcentajeDeReduccion.add(PorcentajeDeReduccion(listaDirectorios3.get(i), listaDirectorios4.get(i)) + "");
         }
-        for(int i=0;i<listaDirectorios.size();i++)
-        {
-            FactorDeCompresion.add(FactorDeCompresion(listaDirectorios4.get(i),listaDirectorios3.get(i))+"");
+        for (int i = 0; i < listaDirectorios.size(); i++) {
+            FactorDeCompresion.add(FactorDeCompresion(listaDirectorios4.get(i), listaDirectorios3.get(i)) + "");
         }
-        for(int i =0;i<listaDirectorios.size();i++)
-        {
-            ListaCompresiones.add(new MostrarCompresiones("Algoritmo de compresion de Huffman: "+"\n"+"Nombre de Archivo: "+listaDirectorios.get(i),"Nombre Archivo Comprimido: "+listaDirectorios2.get(i)+"\n" +"Ruta Archivo: " + listaDirectorios3.get(i),"Razon de compresion: " + RazonDeCompresion.get(i),"Factor de compresion: " + FactorDeCompresion.get(i),"Porcentaje de reduccion: " + PorcentajeDeReduccion.get(i) +" %"));
+        for (int i = 0; i < listaDirectorios.size(); i++) {
+
+            if(listaDirectorios2.get(i).endsWith(".LZW"))
+            {
+                ListaCompresiones.add(new MostrarCompresiones("Algortimo de compresion LZW"+"\n"+"Nombre de Archivo: " + listaDirectorios.get(i), "Nombre Archivo Comprimido: " + listaDirectorios2.get(i) + "\n" + "Ruta Archivo: " + listaDirectorios3.get(i), "Razon de compresion: " + RazonDeCompresion.get(i), "Factor de compresion: " + FactorDeCompresion.get(i), "Porcentaje de reduccion: " + PorcentajeDeReduccion.get(i) + " %"));
+            }
+            if(listaDirectorios2.get(i).endsWith(".huff"))
+            {
+                ListaCompresiones.add(new MostrarCompresiones("Algortimo de compresion de huffman"+"\n"+"Nombre de Archivo: " + listaDirectorios.get(i), "Nombre Archivo Comprimido: " + listaDirectorios2.get(i) + "\n" + "Ruta Archivo: " + listaDirectorios3.get(i), "Razon de compresion: " + RazonDeCompresion.get(i), "Factor de compresion: " + FactorDeCompresion.get(i), "Porcentaje de reduccion: " + PorcentajeDeReduccion.get(i) + " %"));
+            }
+
         }
+}
+//endregion
 
         adapter = new ListAdapter(getApplicationContext(),ListaCompresiones);
         listaCompresiones.setAdapter(adapter);
