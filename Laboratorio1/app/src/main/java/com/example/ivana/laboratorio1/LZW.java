@@ -73,7 +73,7 @@ public class LZW {
             listaCaracteresUnitarios.add(temporal.ObtenerTabla());
             diccionario.Agregar(temporal);
         }
-        salidaCodificada = new int[100];
+        salidaCodificada = new int[10000];
     }
 
     public String Compresion(String n) throws IOException{
@@ -390,5 +390,28 @@ public class LZW {
             e.printStackTrace();
         }
     }
+
+    //metodo para leerArchivo
+    public static String leerArchivo(String archivo){
+
+        String textoArchivo = "";
+        try
+        {
+            String cadenaArchivo;
+            String temp="";
+            FileReader filereader = new FileReader(archivo);
+            BufferedReader bufferedreader = new BufferedReader(filereader);
+            while((cadenaArchivo = bufferedreader.readLine())!=null) {
+                temp = temp + cadenaArchivo+"\n";
+            }
+            bufferedreader.close();
+            textoArchivo = temp;
+
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return textoArchivo;
+    }
+
 
 }
