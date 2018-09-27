@@ -4,7 +4,7 @@ CARLOS ANDRÉS MORALES LARA-1171316
 
 Instrucciones generales de uso para serie III:
 
-1.) Seleccionar ruta para almacenar archivos de compresion y descompresion.
+1.) Seleccionar ruta para almacenar archivos de compresion y descompresion, se desplegara un explorador de archivos y debera de seleccionar un archivo de una carpeta para que la aplicacion pueda detectar la ruta donde este se encuentra almacenado y luego guardar los archivos a ser compresos o descompresos.
 
 2.) Seleccionar un archivo de texto que desee comprimir, apareceran tres cuadros de textos los cuales contedran la compresion LZW, la tabla que se utilizo para comprimir y la ruta del archivo donde se almaceno el archivo lzw.
 
