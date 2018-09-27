@@ -12,3 +12,5 @@ Instrucciones generales de uso para serie III:
 3.) Seleccionar archivo lzw(archivo compreso en segundo paso), al realizar la descompresion mostrara tres cuadros de textos los cuales contedran el mensaje descompreso, la tabla que se utilizo para descomprimir y la ruta donde se almaceno el archivo de lzw descompreso.
 
 4.) Ver opcion de serie II en el menu que se desplegara al inicio de la aplicación, este contendra la informacion de los archivos al ser compresos y mostrara la efectividad de la compresión al mostrar razon, factor y porcentaje de compresión, esta lista podra ser vista en todo tiempo ya quedara un registro en el telefono de dichas compresiones y esta ordenada de manera LIFO.
+
+Nota: Se agregaron dos archivos de prueba llamados "PruebaHimno.txt", "Test.txt", en la carpeta del proyecto para ahorrarle tiempo.
